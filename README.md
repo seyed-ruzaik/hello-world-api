@@ -51,7 +51,7 @@ The goal is to show clean separation between controller, service (business logic
 ### Clone the project
 
 ```bash
-git clone <your-repo-url>.git
+git clone https://github.com/seyed-ruzaik/hello-world-api.git
 cd hello-world-api
 ```
 
