@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Root Maven configuration for the project.
+  - Defines project name, Java version, and dependencies.
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+         http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <!-- Maven model version -->
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- Basic project coordinates (group + artifact) -->
+    <groupId>com.example</groupId>
+    <artifactId>hello-world-api</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>hello-world-api</name>
+    <description>Simple HTTP API assignment - Hello World</description>
+
+    <!-- Use Spring Boot's parent POM for sensible defaults -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.3.0</version>
+        <relativePath/> <!-- Always use the published parent -->
+    </parent>
+
+    <!-- Set the Java version for compilation -->
+    <properties>
+        <java.version>17</java.version>
+    </properties>
+
+    <dependencies>
+        <!--
+          Core Spring Boot web starter.
+          - Brings in Spring MVC, embedded Tomcat, JSON (Jackson), etc.
+        -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!--
+          Spring Boot test starter.
+          - JUnit, AssertJ, MockMvc, etc.
+          - Used only for tests (scope = test).
+        -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!--
+              Plugin to build an executable JAR:
+              `java -jar target/hello-world-api-0.0.1-SNAPSHOT.jar`
+            -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+</project>
